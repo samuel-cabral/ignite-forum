@@ -7,12 +7,12 @@ interface AnswerQuestionUseCaseRequest {
 }
 
 export class AnswerQuestionUseCase {
-  public execute({
-    questionId,
-    instructorId,
-    content,
-  }: AnswerQuestionUseCaseRequest) {
-    const answer = new Answer(content)
+  execute({ questionId, instructorId, content }: AnswerQuestionUseCaseRequest) {
+    const answer = new Answer({
+      content,
+      authorId: instructorId,
+      questionId,
+    })
 
     return answer
   }

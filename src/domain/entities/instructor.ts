@@ -10,6 +10,10 @@ export class Instructor extends Entity<InstructorProps> {
     return this.props.name
   }
 
+  set name(name: string) {
+    this.props.name = name
+  }
+
   static create(props: InstructorProps, id?: UniqueEntityID) {
     const instructor = new Instructor(props, id)
 
